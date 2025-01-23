@@ -8,8 +8,7 @@ const jump = () => {
     mario.classList.remove("jump")
   }, 500)
 }
-{
-  /* 
+
 const loop = setInterval(() => {
   const pipePosition = pipe.offsetLeft
   const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "")
@@ -28,6 +27,5 @@ const loop = setInterval(() => {
     clearInterval(loop)
   }
 }, 10)
-*/
-}
+
 document.addEventListener("click", jump)
