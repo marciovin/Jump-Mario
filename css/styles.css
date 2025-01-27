@@ -1,3 +1,20 @@
+@media screen and (max-width: 768px) {
+  .game-board {
+    height: 100vh; /* Ajusta a altura para ocupar todo o visor no celular */
+  }
+}
+
+.game-board {
+  width: 200vw; /* Faz a área do jogo ser duas vezes a largura da tela */
+  height: 600px; /* Mantém a altura original */
+  overflow-x: scroll; /* Permite o scroll horizontal */
+  position: relative;
+}
+
+body {
+  overflow: hidden; /* Impede o scroll da página fora do jogo */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,8 +45,8 @@
 .pipe {
   position: absolute;
   bottom: 0;
-  width: 80px;
-  animation: pipe-animation 1.5s linear infinite;
+  width: 50px;
+  animation: pipe-animation 1s linear infinite;
 }
 
 .mario {
@@ -54,7 +71,7 @@
 
 @keyframes clouds-animation {
   from {
-    right: -550px;
+    right: -850px;
   }
 
   to {
