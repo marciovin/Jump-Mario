@@ -46,7 +46,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 50px;
-  animation: pipe-animation 1s linear infinite;
+  animation: pipe-animation 1.5s linear infinite;
 }
 
 .mario {
@@ -56,12 +56,12 @@ body {
 }
 
 .jump {
-  animation: jump 500ms ease-out infinite;
+  animation: jump 640ms ease-out infinite;
 }
 
 @keyframes pipe-animation {
   from {
-    right: -80px;
+    right: -100px;
   }
 
   to {
