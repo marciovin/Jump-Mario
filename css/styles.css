@@ -49,6 +49,55 @@ body {
   animation: pipe-animation 1.5s linear infinite;
 }
 
+ .game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .game-over-message h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .game-over-message p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .game-over-message button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .game-over-message button:hover {
+    background: #ff6b81;
+  }
+
+.counter-pipe {
+  position: absolute;
+  bottom: 10;
+  color: #fdfdfd;
+}
+
+.counter-pipe span {
+  width: 150px;
+  color: #e0f6ff;
+}
+
 .mario {
   position: absolute;
   bottom: 0;

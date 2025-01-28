@@ -7,9 +7,9 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <title>Mario Jump</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/script.js" defer></script>
   </head>
-  <link rel="stylesheet" href="./css/styles.css" />
-  <script src="./js/script.js" defer></script>
 
   <body style="background-color: #a85715">
     <div class="game-board">
@@ -18,5 +18,11 @@
       <img src="./images/mario.gif" class="mario" alt="" />
       <img src="./images/pipe.png" class="pipe" alt="" />
     </div>
+    <footer>
+      <div class="score counter-pipe">Pulos: <span id="score">0</span></div>
+    </footer>
+
+    <!-- Contêiner onde a mensagem de Game Over será carregada -->
+    <div id="game-over-container"></div>
   </body>
 </html>
