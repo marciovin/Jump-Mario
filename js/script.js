@@ -6,6 +6,7 @@ const gameOverContainer = document.querySelector("#game-over-container")
 
 let jumpCount = 0
 let pipePassed = false
+let pipeSpeed = 1.5
 
 const jump = () => {
   mario.classList.add("jump")
@@ -15,12 +16,49 @@ const jump = () => {
   }, 500)
 }
 
+const increaseSpeed = () => {
+  if (jumpCount === 5) {
+    pipeSpeed = 1.4
+    console.log("Aumentou a velocidade para 2.5s")
+  } else if (jumpCount === 10) {
+    pipeSpeed = 1.3
+    console.log("Aumentou a velocidade para 2s")
+  } else if (jumpCount === 15) {
+    pipeSpeed = 1.2
+    console.log("Aumentou a velocidade para 1.5s")
+  } else if (jumpCount === 20) {
+    pipeSpeed = 1
+    console.log("Aumentou a velocidade para 1s")
+  } else if (jumpCount === 25) {
+    pipeSpeed = 0.5
+    console.log("Aumentou a velocidade para 1s")
+  } else if (jumpCount === 30) {
+    pipeSpeed = 0.4
+    console.log("Aumentou a velocidade para 1s")
+  } else if (jumpCount === 40) {
+    pipeSpeed = 0.3
+    console.log("Aumentou a velocidade para 1s")
+  } else if (jumpCount === 50) {
+    pipeSpeed = 0.2
+    console.log("Aumentou a velocidade para 1s")
+  } else if (jumpCount === 60) {
+    pipeSpeed = 0.1
+    console.log("Aumentou a velocidade para 1s")
+  }
+
+  // Reinicia a animação com a nova velocidade sem travar o cano
+  pipe.style.animation = "none"
+  void pipe.offsetWidth // Força um reflow para reiniciar a animação
+  pipe.style.animation = `pipe-animation ${pipeSpeed}s linear infinite`
+}
+
 const calculatorJumpPipe = (pipePosition) => {
   if (pipePosition < 0 && !pipePassed) {
     jumpCount++
     pipePassed = true
     scoreElement.textContent = jumpCount
     console.log(`Mario pulou ${jumpCount} cano(s)!`)
+    increaseSpeed() // Chama a função para aumentar a velocidade
   }
 
   if (pipePosition > 0) {
@@ -69,6 +107,7 @@ const loop = setInterval(() => {
   } else {
     calculatorJumpPipe(pipePosition)
   }
-}, 10)
+}, 20)
 
 document.addEventListener("click", jump)
+document.addEventListener("keyup", jump)

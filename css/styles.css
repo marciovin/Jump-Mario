@@ -1,16 +1,3 @@
-@media screen and (max-width: 768px) {
-  .game-board {
-    height: 100vh; /* Ajusta a altura para ocupar todo o visor no celular */
-  }
-}
-
-.game-board {
-  width: 200vw; /* Faz a área do jogo ser duas vezes a largura da tela */
-  height: 600px; /* Mantém a altura original */
-  overflow-x: scroll; /* Permite o scroll horizontal */
-  position: relative;
-}
-
 body {
   overflow: hidden; /* Impede o scroll da página fora do jogo */
 }
@@ -46,56 +33,52 @@ body {
   position: absolute;
   bottom: 0;
   width: 50px;
-  animation: pipe-animation 1.5s linear infinite;
+  animation: pipe-animation 1.5s linear infinite; /* Velocidade inicial */
 }
 
- .game-over-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
+.game-over-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-  .game-over-message h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
+.game-over-message h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
 
-  .game-over-message p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
+.game-over-message p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
 
-  .game-over-message button {
-    font-size: 1rem;
-    padding: 10px 20px;
-    background: #ff4757;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
+.game-over-message button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-  .game-over-message button:hover {
-    background: #ff6b81;
-  }
+.game-over-message button:hover {
+  background: #ff6b81;
+}
 
 .counter-pipe {
+  width: 150px;
   position: absolute;
   bottom: 10;
   color: #fdfdfd;
-}
-
-.counter-pipe span {
-  width: 150px;
-  color: #e0f6ff;
 }
 
 .mario {
@@ -105,12 +88,12 @@ body {
 }
 
 .jump {
-  animation: jump 640ms ease-out infinite;
+  animation: jump 540ms ease-out infinite;
 }
 
 @keyframes pipe-animation {
   from {
-    right: -100px;
+    right: -200px;
   }
 
   to {
